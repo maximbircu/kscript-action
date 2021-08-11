@@ -3,7 +3,21 @@ KScript Action is a simple Github action that allows you to run KScript files wi
 
 # Usage
 
-TBA
+```yml
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SCM
+        uses: actions/checkout@v2
+
+      - name: Check groovy
+          uses: maximbircu/kscript-action@v1.0.0
+          with:
+            kotlin-script: path/to/your/kscript.kts (or an url)
+```
 
 # Contribution rules:
 1. Make sure there is a GitHub issue describing the changes you want to contribute with. (Add one if needed)

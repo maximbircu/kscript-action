@@ -1,0 +1,18 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pullreqest:
+    name: Check pull request styling
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check branch name and commit messages style
+        uses: maximbircu/pull-request-checkstyle@v1.0.0
+        with:
+          branch-name-regex: '^(revert-\d+-)?\d+(-([a-z])+)+'
+          commit-message-title-regex: '^[A-Z].*'
