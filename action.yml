@@ -1,0 +1,17 @@
+name: "KScript Action"
+author: 'Maxim Bîrcu'
+description: "Github action to run KScript files"
+inputs:
+  kotlin-script:
+    description: "A path or a url to the KScript file to be run"
+    required: true
+
+branding:
+  icon: code
+  color: yellow
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.kotlin-script }}
