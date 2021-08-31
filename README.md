@@ -16,6 +16,8 @@ jobs:
       - name: Check groovy
           uses: maximbircu/kscript-action@v1.0.0
           with:
+            kscript-version: 3.1.0
+            kotlin-version: 1.5.31
             kotlin-script: path/to/your/kscript.kts (or an url)
 ```
 

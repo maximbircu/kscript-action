@@ -6,6 +6,14 @@ inputs:
     description: "A path or a url to the KScript file to be run"
     required: true
 
+  kotlin-version:
+    description: "Kotlin version - choose from the ones available in sdkman"
+    required: false
+
+  kscript-version:
+    description: "Kscript version - choose from the ones available in sdkman"
+    required: false
+
 branding:
   icon: code
   color: yellow
@@ -14,4 +22,6 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.kotlin-version }}
+    - ${{ inputs.kscript-version }}
     - ${{ inputs.kotlin-script }}
