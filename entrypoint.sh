@@ -1,7 +1,10 @@
 #!/bin/bash
 
-KTS_FILE=$1
-
 source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-kscript $KTS_FILE
+sdk install kotlin $1
+sdk install kscript $2
+
+sdk current
+
+kscript $3

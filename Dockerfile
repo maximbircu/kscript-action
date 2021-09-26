@@ -21,9 +21,7 @@ RUN set -x \
 RUN source $SDKMAN_DIR/bin/sdkman-init.sh \
     && sdk install maven \
     && sdk install gradle \
-    && sdk install java \
-    && sdk install kotlin \
-    && sdk install kscript
+    && sdk install java
 
 COPY entrypoint.sh /
 
